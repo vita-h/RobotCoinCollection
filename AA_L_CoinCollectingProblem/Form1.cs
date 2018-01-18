@@ -107,7 +107,7 @@ namespace AA_L_CoinCollectingProblem
 
             DrawSolution();
 
-            MessageBox.Show("Robot can collect maximum number of coins: " + F[N,M].ToString(), "Result");
+            MessageBox.Show("Robot can collect maximum number of coins: " + F[N, M].ToString(), "Result");
         }
 
         int N;
@@ -127,8 +127,8 @@ namespace AA_L_CoinCollectingProblem
             coin.X = ((p.X - StartX) / SizeOfGridTile) * SizeOfGridTile + StartX;
             coin.Y = ((p.Y - StartY) / SizeOfGridTile) * SizeOfGridTile + StartY;
 
-            GraphicsObj.FillEllipse(new SolidBrush(Color.Gold), coin.X + SizeOfGridTile/4, coin.Y+SizeOfGridTile/4, SizeOfGridTile/2, SizeOfGridTile/2);
-            GraphicsObj.DrawEllipse(BasicPen, coin.X+SizeOfGridTile/4, coin.Y+SizeOfGridTile/4, SizeOfGridTile/2, SizeOfGridTile/2);
+            GraphicsObj.FillEllipse(new SolidBrush(Color.Gold), coin.X + SizeOfGridTile / 4, coin.Y + SizeOfGridTile / 4, SizeOfGridTile / 2, SizeOfGridTile / 2);
+            GraphicsObj.DrawEllipse(BasicPen, coin.X + SizeOfGridTile / 4, coin.Y + SizeOfGridTile / 4, SizeOfGridTile / 2, SizeOfGridTile / 2);
 
             int j = (p.X - StartX) / SizeOfGridTile, i = (p.Y - StartY) / SizeOfGridTile;
             C[i, j] = 1;
@@ -156,7 +156,7 @@ namespace AA_L_CoinCollectingProblem
             button2.Enabled = true;
 
             C = new int[N, M];
-        } 
+        }
 
         private void DrawSolution()
         {
@@ -170,7 +170,7 @@ namespace AA_L_CoinCollectingProblem
             // Draw Numbers
             for (int i = 1; i < F.GetLength(0); i++)
                 for (int j = 1; j < F.GetLength(1); j++)
-                    GraphicsObj.DrawString(F[i, j].ToString(),new Font("Times New Roman", 12.0f), new SolidBrush(Color.Black), (j - 1) * SizeOfGridTile + StartY, (i - 1) * SizeOfGridTile + StartX + SizeOfGridTile/3);
+                    GraphicsObj.DrawString(F[i, j].ToString(), new Font("Times New Roman", 12.0f), new SolidBrush(Color.Black), (j - 1) * SizeOfGridTile + StartY, (i - 1) * SizeOfGridTile + StartX + SizeOfGridTile / 3);
         }
     }
 }
